@@ -40,13 +40,8 @@ text_area.frame.grid(row=0, column=1, sticky="NSEW")
 # text_area.insert(tk.END, ('a'*999 + '\n')*999)
 text_area.focus()
 
-
-def insert_separator(event):
-    print(event)
-    text_area.edit_separator()
-
-text_area.bind("<space>", insert_separator)
-text_area.bind("<Return>", insert_separator)
+text_area.bind("<space>", lambda event: text_area.edit_separator())
+text_area.bind("<Return>", lambda event: text_area.edit_separator())
 line_numbers = tk.Canvas(window, width="30", height="500")
 line_numbers.grid(row=0, column=0, sticky='NS', pady=1, rowspan=3)
 
